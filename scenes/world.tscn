@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://brae8d0klhvh3"]
+
+[ext_resource type="Script" uid="uid://clhrbci6ba027" path="res://scripts/world.gd" id="1_world"]
+[ext_resource type="PackedScene" path="res://scenes/player.tscn" id="2_player"]
+[ext_resource type="Script" uid="uid://cvdmp8txxpw8d" path="res://scripts/hud.gd" id="3_hud"]
+
+[node name="World" type="Node3D" unique_id=325780142]
+script = ExtResource("1_world")
+
+[node name="Sun" type="DirectionalLight3D" parent="." unique_id=414544527]
+transform = Transform3D(0.86602527, 0.38302252, -0.32139382, 0, 0.64278734, 0.7660447, 0.50000024, -0.66341406, 0.55667007, 0, 0, 0)
+light_color = Color(1, 0.88, 0.68, 1)
+light_energy = 1.35
+shadow_enabled = true
+
+[node name="Player" parent="." unique_id=1145024130 instance=ExtResource("2_player")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=1385587084]
+script = ExtResource("3_hud")

@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scripts/relic.gd" id="1_relic"]
+
+[sub_resource type="SphereShape3D" id="SphereShape_relic"]
+radius = 1.6
+
+[sub_resource type="SphereMesh" id="SphereMesh_relic"]
+radius = 0.42
+height = 0.84
+
+[node name="Relic" type="Area3D"]
+script = ExtResource("1_relic")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape_relic")
+
+[node name="Orb" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_relic")
+
+[node name="Light" type="OmniLight3D" parent="."]
+light_color = Color(0.4, 0.9, 1, 1)
+light_energy = 1.5
+omni_range = 4.0
